@@ -12,13 +12,24 @@ It fulfills the requirements of the Rectangles Challenge as outlined by Decision
 - Python Version: Python 3.8 or above
 
 ## Dependencies:
-- Pillow (Python Imaging Library)
 - Refer to the requirements.txt file for the specific version of dependencies.
 
-## Installation
+## Compiled Executable
+
+For convenience, a compiled version of the program is available.
+
+The executable is located in the `dist/` folder:
+- **Windows**: `dist\main.exe`
+- **macOS/Linux**: `dist/main`
+
+1. Navigate to the `dist` directory in cmd window ("cd dist")
+   
+2. Example cmd input: "main 4"
+
+## Source Code Installation
 1.  Clone the Repository:
-    git clone https://github.com/your-username/rectangles-challenge.git
-    cd rectangles-challenge
+    git clone https://github.com/sg9372/DecisionIncAssesment
+    cd DecisionIncAssesment
 
 2.  Set Up a Virtual Environment (Optional but Recommended):
     
@@ -30,18 +41,7 @@ It fulfills the requirements of the Rectangles Challenge as outlined by Decision
     python3 -m venv .venv
     source .venv/bin/activate
 
-## Compiled Executable
-
-For convenience, a compiled version of the program is available.
-
-The executable is located in the `dist/` folder:
-- **Windows**: `dist\main.exe`
-- **macOS/Linux**: `dist/main`
-
-1. Navigate to the `dist` directory ("cd dist")
-   
-2. Example cmd input: "main 4"
-   Example VS code terminal input: "./main 4""
+3. Run code using, for example: "python src/main.py 10"
 
 ## Install Dependencies:
 
