@@ -17,14 +17,11 @@ It fulfills the requirements of the Rectangles Challenge as outlined by Decision
 ## Compiled Executable
 
 For convenience, a compiled version of the program is available.
+The compiled code as been emailed to Natalie, and can be downloaded and ran by:
 
-The executable is located in the `dist/` folder:
-- **Windows**: `dist\main.exe`
-- **macOS/Linux**: `dist/main`
-
-1. Navigate to the `dist` directory in cmd window ("cd dist")
+1. Navigate to `main.py`'s directory in cmd window (using "cd")
    
-2. Example cmd input: "main 4"
+2. Run the code, example cmd input: "main 4"
 
 ## Source Code Installation
 1.  Clone the Repository:
