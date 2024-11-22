@@ -1,62 +1,68 @@
 import tkinter as tk
-from PIL import Image, ImageTk
 
 def drawRectangles(rectangles, vertRectangles):
-    print(rectangles)
+    """
+    Shows random horizonally adjacent rectangles and optimised vertically stacked rectangles simultaneously.
+
+    Args:
+        rectangles (List[List]): list of random, horizontally adjacent rectangles.
+        vertRectangles (List[List]): list of optimised, vertically stacked rectangles.
+
+    Returns:
+        None.
+    """
     # Create root window.
     root = tk.Tk()
     root.title('Rectangles')
 
     # Define scale
-    scale = 25
+    scale = 10
 
-    # Determine x-offset
+    # Determine limits and margins for selecting canvas dimensions
     totalLength = rectangles[len(rectangles)-1][2]*scale
     maxHeight = 10*scale
-    
-    canvasWidth = totalLength+100
-    canvasHeight = maxHeight+50
+    xMargin = 100
+    yMargin = 25
+
+    # Determine canvas dimensions
+    canvasWidth = totalLength+xMargin
+    canvasHeight = (maxHeight*1.2)+yMargin
     middle = canvasWidth/2
     xOffset = middle-(totalLength/2)
 
     # Build canvas
     canvas = tk.Canvas(root, width=canvasWidth, height=canvasHeight)
-    canvas.pack(padx = 10, pady=10, side="bottom")
+    canvas.pack(side="bottom")
 
     # Loop through each rectangle in the "rectangles" matrix
     for rect in rectangles:
         x0, y0, x1, y1 = rect  # Unpack rectangle coordinates
         
-        # Offset x values
+        # Offset x values to align to centre
         x0 = xOffset+x0*scale
         x1 = xOffset+x1*scale
 
         # Offset y values
-        print(y0, y1)
-        y0 = maxHeight-(y0*scale)
-        y1 = maxHeight-(y1*scale)
-        print(x0, y0, x1, y1)
+        y0 = canvasHeight-(y0*scale)-yMargin
+        y1 = canvasHeight-(y1*scale)-yMargin
 
         # Add to canvas
         canvas.create_rectangle(x0, y0, x1, y1, outline="grey", width=4)
 
-    # Do the same for the vertRectangles.
-    # Loop through each rectangle in the "rectangles" matrix
+    # Loop through each rectangle in the "vertRectangles" matrix
     for rect in vertRectangles:
         x0, y0, x1, y1 = rect  # Unpack rectangle coordinates
         
-        # Offset x values
+        # Offset x values to align to centre
         x0 = xOffset+x0*scale
         x1 = xOffset+x1*scale
 
         # Offset y values
-        y0 = maxHeight-(y0*scale)
-        y1 = maxHeight-(y1*scale)
+        y0 = canvasHeight-(y0*scale)-yMargin
+        y1 = canvasHeight-(y1*scale)-yMargin
 
-        print(x0, y0, x1, y1)
         # Add to canvas
         canvas.create_rectangle(x0, y0, x1, y1, outline="blue", width=2)
-
 
     # Run the Tkinter event loop
     root.mainloop()
