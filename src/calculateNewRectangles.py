@@ -2,7 +2,7 @@ from collections import deque
 import math
 
 def calculateNewRectangles(rectangles):
-    newRectangles = processIsland(rectangles, [], 0)
+    newRectangles = processIsland(rectangles, 0)
     return newRectangles
 
 def processIsland(island, floorY):

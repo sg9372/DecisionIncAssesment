@@ -1,17 +1,14 @@
 from defineRectangles import defineRectangles
 from drawRectangles import drawRectangles
 from calculateNewRectangles import calculateNewRectangles
+import copy
 
 def main(n):
-    print("Starting process...")
     rectangles = defineRectangles(n)
+    rectangles = [[0, 4, 6, 0], [6, 2, 9, 0], [9, 5, 19, 0], [19, 3, 27, 0], [27, 7, 29, 0]]    
+    vertRectangles = calculateNewRectangles(copy.deepcopy(rectangles))
 
-    if rectangles==-1:
-        print("Please enter an integer from 3 to 10 inclusive.")
-    
-    canvas = drawRectangles(rectangles)
-
-    calculateNewRectangles(rectangles)
+    drawRectangles(rectangles, vertRectangles)
 
 
 

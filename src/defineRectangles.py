@@ -5,10 +5,6 @@ import random
 def defineRectangles(n):
 # Rectangle form definition = [x0, y0, x1, y1] [topleft, bottomright]
 
-    # Verify input, n
-    if not (isinstance(n, int) and 3<=n<=10):
-        return -1
-
     # Initialize rectangles, preallocating space for efficiency
     rectangles = [[0, 0, 0, 0] for _ in range(n)]
 
